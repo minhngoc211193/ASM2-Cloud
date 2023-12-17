@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var TypeModel = require('../models/TypeModel');
-//const ProductModel = require('../models/ProductModel');
 var ProductModel = require('../models/ProductModel');
 
-router.get('/', async(req,res) =>{
+router.get('/type', async(req,res) =>{
     var types = await TypeModel.find({});
-    res.render('type.index', {types});
+    res.render('type/index', {types});
 })
 router.get('/add', (req,res) => {
     res.render('type/add');
