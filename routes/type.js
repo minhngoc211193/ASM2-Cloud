@@ -3,7 +3,7 @@ var router = express.Router();
 var TypeModel = require('../models/TypeModel');
 var ProductModel = require('../models/ProductModel');
 
-router.get('/type', async(req,res) =>{
+router.get('/', async(req,res) =>{
     var types = await TypeModel.find({});
     res.render('type/index', {types});
 })

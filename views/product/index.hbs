@@ -1,18 +1,18 @@
 
-<div action="/type/index/" class="container mt-3" style="text-align:center">
+<div action="/product/index/" class="container mt-3" style="text-align:center">
   <br>
   <br>
   <br>
   <br>
-  <h2 style="text-align: center;">Type of types</h2> 
+  <h2 style="text-align: center;">Product</h2> 
   <h2>
         <a href="" class="bi bi-plus-circle" style="width: 45px; height: 43px;"></a>
 </h2>      
-{{#each types}}
+{{#each products}}
             <div class="" style="display:inline-block; width: 25%; margin: 10px;">
-                  <img src="" width="268" height="400">
+                  <img src="{{image}}" width="268" height="400">
                     <div class="text-center p-4 position-relative mt-n5 mx-4">
-                        <h4><a href="/type/detail/{{id}}">{{type}}</a></h4>
+                        <h4><a href="/type/detail/{{id}}">{{product}}</a></h4>
                         <br>
                         <a href="/type/edit/{{_id}}">Edit</a>
                 

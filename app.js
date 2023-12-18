@@ -12,6 +12,9 @@ var productRouter = require('./routes/product');
 
 var app = express();
 
+//var hbs = require('hbs');
+//hbs.registerHelper('equal', require('handlebars-helper-equal'))
+
 // 2. config 'mongoose' module
 var mongoose = require('mongoose');
 var uri = "mongodb+srv://ngocvtmgch211193:Ngoc1234@cluster.wa09nzj.mongodb.net/ToyCompany";
@@ -23,6 +26,7 @@ mongoose.connect(uri)
 // 3. config 'body-parser' module
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
+
 var app = express();
 
 
