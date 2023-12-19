@@ -22,13 +22,14 @@ router.get('/detail/:id', async (req, res) => {
     var products = await ProductModel.find({ type : id }).populate('type');
     res.render('type/detail', { products })
  })
-router.get('./delete/:id', async(req, res) =>{
+router.get('/delete/:id', async(req, res) =>{
     var id = req.params.id;
     try{
-    await TypeModel.findByIdAndDelete(id);
-    console.log('Delete type succeed');
-    }catch(err){
-        console.log('Delete type fail. Error:' +err)};
+        await TypeModel.findByIdAndDelete(id);
+        console.log('Delete type succeed');
+    }catch(error){
+        console.log('Delete faile. Error:'+ error);
+    }
     res.redirect('/type');
 })
 

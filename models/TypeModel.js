@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var TypeSchema = mongoose.Schema(
    {
-      type: {
+      name: {
          type: String,
          required: true,
          minlength: [3, 'type name must be at least 3 characters'],

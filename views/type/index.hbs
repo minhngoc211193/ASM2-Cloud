@@ -1,23 +1,32 @@
+ <h2 style="text-align: center;">Type of types</h2> 
+  <a href="/type/add " style="text-align: center;">Add</a> 
+<table action="/type/index" class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+    <tr>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+        {{#each types}}
+    <tr>   
+      <td>
+        <div class="d-flex align-items-center">
 
-<div action="/type/index/" class="container mt-3" style="text-align:center">
-  <br>
-  <br>
-  <br>
-  <br>
-  <h2 style="text-align: center;">Type of types</h2> 
-  <h2>
-        <a href="" class="bi bi-plus-circle" style="width: 45px; height: 43px;"></a>
-</h2>      
-{{#each types}}
-            <div class="" style="display:inline-block; width: 25%; margin: 10px;">
-                  <img src="" width="268" height="400">
-                    <div class="text-center p-4 position-relative mt-n5 mx-4">
-                        <h4><a href="/type/detail/{{id}}">{{type}}</a></h4>
-                        <br>
-                        <a href="/type/edit/{{_id}}">Edit</a>
-                
-                <button href="/type/delete/{{_id}}" type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                    </div>
-            </div>
-            {{/each}}
-</div>
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{name}}</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <button href="/type/edit/{{_id}}" type="button" class="btn btn-link btn-sm btn-rounded">
+          Edit
+        </button>
+         <button href="/type/delete/{{ _id }}" class="btn btn-link btn-sm btn-rounded" onclick="return confirm('Are you sure?')">
+          Delete
+        </button>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
