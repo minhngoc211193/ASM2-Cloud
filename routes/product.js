@@ -17,6 +17,13 @@ router.post('/add', async (req, res) => {
     await ProductModel.create(product);
     res.redirect('/product');
 })
+router.get('/detail/:id',async (req, res) => {
+    var id = req.params.id;
+    //SQL: SELECT * FROM mobiles WHERE brand = "id"
+    var products = await ProductModel.find({ product : id }).populate('type');
+    res.render('product/detail', { products })
+ 
+})
 
 
 router.get('/delete/:id', async (req, res) => {
