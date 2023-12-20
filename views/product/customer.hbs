@@ -4,19 +4,13 @@
   <br>
   <br>
   <br>
-  <h2 style="text-align: center;">Product</h2> 
-  <h2>
-        <a href="/product/add" class="bi bi-plus-circle" style="width: 45px; height: 43px;"></a>
-</h2>      
+  <h2 style="text-align: center;">Product</h2>      
 {{#each products}}
             <div class="" style="display:inline-block; width: 25%; margin: 10px;">
                   <img src="{{image}}" width="268" height="400">
                     <div class="text-center p-4 position-relative mt-n5 mx-4">
                         <h4><a href="/product/detail/{{id}}">{{name}}</a></h4>
                         <br>
-                        <a href="/product/edit/{{_id}}">Edit</a>
-                
-                <button href="/product/delete/{{_id}}" type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                     </div>
             </div>
             {{/each}}

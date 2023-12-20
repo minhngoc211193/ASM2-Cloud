@@ -5,7 +5,7 @@ var ProductSchema = mongoose.Schema(
          type: String,
          required: true,
          minlength: [3, 'type name must be at least 3 characters'],
-         maxlength: 20
+         maxlength: 100
       },
       price:{
         type: String,
@@ -13,9 +13,9 @@ var ProductSchema = mongoose.Schema(
       },
       image:String,
       type: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'types'  // 'types': collectionm
-     }
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'types'  // 'brands': collection
+      }
    });
 var ProductModel = mongoose.model('products', ProductSchema);
 module.exports = ProductModel;

@@ -5,10 +5,10 @@ var ProductModel = require('../models/ProductModel');
 
 router.get('/', async(req,res) =>{
     var types = await TypeModel.find({});
-    res.render('type/index', {types});
+    res.render('type/index', {layout: 'layout',types});
 })
 router.get('/add', (req,res) => {
-    res.render('type/add');
+    res.render('type/add', {layout: 'layout'});
 })
 
 router.post('/add', async(req,res) =>{
@@ -42,7 +42,7 @@ router.get('deleteall', async(req,res)=>{
 router.get('/edit/:id', async(req,res)=>{
     var id = req.params.id;
     var type = await TypeModel.findById(id);
-    res.render('type/edit', {type});
+    res.render('type/edit', {layout: 'layout',type});
 })
 
 router.post('/edit/:id', async(req,res)=>{

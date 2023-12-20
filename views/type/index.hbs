@@ -1,32 +1,24 @@
- <h2 style="text-align: center;">Type of types</h2> 
-  <a href="/type/add " style="text-align: center;">Add</a> 
-<table action="/type/index" class="table align-middle mb-0 bg-white">
-  <thead class="bg-light">
-    <tr>
-      <th>Type</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-        {{#each types}}
-    <tr>   
-      <td>
-        <div class="d-flex align-items-center">
 
-          <div class="ms-3">
-            <p class="fw-bold mb-1">{{name}}</p>
-          </div>
-        </div>
+ <h2 style="text-align: center;">Type of types</h2> 
+  <a href="/type/add " class="btn btn-info" style="text-align: center;">Add</a> 
+<table  class="table align-middle mb-0 bg-white">
+       <tr>
+      <th>Type name </th>
+      <th colspan="2">Actions</th>
+   </tr>
+   {{#each types }}
+   <tr>
+      <td>
+         <a href="/type/detail/{{ _id }}">
+            {{ name }}
+         </a>
       </td>
       <td>
-        <button href="/type/edit/{{_id}}" type="button" class="btn btn-link btn-sm btn-rounded">
-          Edit
-        </button>
-         <button href="/type/delete/{{ _id }}" class="btn btn-link btn-sm btn-rounded" onclick="return confirm('Are you sure?')">
-          Delete
-        </button>
+         <a class="bi bi-highlighter btn" href="/type/edit/{{ _id }}"></a>
+         <a class="btn btn-link btn-sm btn-rounded" href="/type/delete/{{ _id }}"
+         onclick="return confirm('Are you sure to delete this type ?');"
+         >Delete</a>
       </td>
-    </tr>
-    {{/each}}
-  </tbody>
+   </tr>
+   {{/each}}
 </table>

@@ -12,8 +12,8 @@ var productRouter = require('./routes/product');
 
 var app = express();
 
-//var hbs = require('hbs');
-//hbs.registerHelper('equal', require('handlebars-helper-equal'))
+var hbs = require('hbs');
+hbs.registerHelper('equal', require('handlebars-helper-equal'))
 
 // 2. config 'mongoose' module
 var mongoose = require('mongoose');
