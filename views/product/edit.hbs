@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     </head>
 <body>
-    <form action="/product/edit/{{ product._id }}" method="post">
+    <form action="/product/edit/{{product._id}}" method="post">
 <section class="vh-100 bg-image"
   style="background-image: url();object-fit: cover">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -36,8 +36,8 @@
                     {{/each}}
                   </select>
                 <div class="d-flex justify-content-center">
-                  <button type="submit" value="Edit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add</button>
+                  <input type="submit" value="Edit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
                 </div>
               </form>
             </div>

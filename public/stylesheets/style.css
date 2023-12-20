@@ -181,7 +181,7 @@ img.animated.pulse {
 /*** Deal ***/
 .deal {
   position: relative;
-  background: url(../img/bg.png) center center no-repeat;
+  background: url(../images/bg.png) center center no-repeat;
   background-size: cover;
 }
 

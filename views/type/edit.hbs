@@ -1,7 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <title>ToyStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+<body>
 <form action="/type/edit/{{ type._id }}" method="post">
    <h1>Edit brand</h1>
    Brand name: <input type="text" name="name" id="" value="{{ type.name }}" required>
    <br><br>
    <input type="submit" value="Edit">
 </form>
+</body>
+</html>

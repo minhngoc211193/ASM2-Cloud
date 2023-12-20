@@ -4,20 +4,31 @@
   <br>
   <br>
   <br>
-  <h2 style="text-align: center;">Product</h2> 
-  <h2>
-        <a href="/product/add" class="bi bi-plus-circle" style="width: 45px; height: 43px;"></a>
-</h2>      
-{{#each products}}
-            <div class="" style="display:inline-block; width: 25%; margin: 10px;">
-                  <img src="{{image}}" width="268" height="400">
-                    <div class="text-center p-4 position-relative mt-n5 mx-4">
-                        <h4><a href="/product/detail/{{id}}">{{name}}</a></h4>
-                        <br>
-                        <a href="/product/edit/{{_id}}">Edit</a>
-                
-                <button href="/product/delete/{{_id}}" type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                    </div>
+<div class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 style="text-align: center;"  class="text-primary mb-3"><span class="fw-light text-dark"></span> Toy Product</h1>
+                <div class="col-12 text-center">
+                    <a href="/product/add" class="btn btn-primary py-2 px-4" href="">Add new product</a>
+                </div>
+                <p class="mb-5"></p>
             </div>
-            {{/each}}
+
+            <div class="row g-4">
+                {{#each products}}
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="product-item text-center border h-100 p-4">
+                        <img class="img-fluid mb-4" src="{{image}}" alt="">
+                        <a href="/product/detail/{{_id}}" class="h6 d-inline-block mb-2">{{name}}</a>
+                        <h5 class="text-primary mb-3">{{price}}</h5>
+                        <a href="/product/edit/{{_id}}" class="btn btn-outline-primary px-3">Edit</a>
+                        <a href="/product/delete/{{ _id }}" type="submit" class="btn btn-danger" 
+                        onclick="return confirm('Are you sure?')">Delete</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+    </div>   
 </div>
