@@ -16,7 +16,12 @@ var ProductSchema = mongoose.Schema(
       type: {
          type: mongoose.Schema.Types.ObjectId,
          ref: 'types'  // 'brands': collection
+      },
+      country:{
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'countries'
       }
+
    });
 var ProductModel = mongoose.model('products', ProductSchema);
 module.exports = ProductModel;

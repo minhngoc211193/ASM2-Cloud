@@ -35,6 +35,12 @@
                  <option value="{{ _id }}"> {{ name }}</option>
                     {{/each}}
                   </select>
+                  <br> Country:
+                  <select name="country">
+                 {{#each countries }}
+                 <option value="{{ _id }}"> {{name}}</option>
+                    {{/each}}
+                  </select>
                 <div class="d-flex justify-content-center">
                   <button type="submit" value="Add"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add</button>

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var TypeModel = require('../models/TypeModel');
 var ProductModel = require('../models/ProductModel');
+var CountryModel = require('../models/CountryModel');
 
 router.get('/', async (req, res) => {
     var products = await ProductModel.find({}).populate('type');
@@ -10,7 +11,9 @@ router.get('/', async (req, res) => {
  })
 router.get('/add', async (req, res) => {
     var types = await TypeModel.find({});
-    res.render('product/add', {layout: 'layout',types});
+    //var product = await ProductModel.find({}).populate('country');
+    var countries = await CountryModel.find({});
+    res.render('product/add', {layout: 'layout',types, countries});
 })
 router.post('/add', async (req, res) => {
     var product = req.body;
@@ -24,7 +27,15 @@ router.get('/detail/:id',async (req, res) => {
     res.render('product/detail', { products })
  
 })
-
+router.get('/sort/asc', async (req, res) => {
+    var products = await ProductModel.find().populate('type').sort({ price: 1 });
+    res.render('product/index', { products })
+ })
+ 
+ router.get('/sort/desc', async (req, res) => {
+    var products = await MobileModel.find().populate('type').sort({ price: -1 });
+    res.render('product/index', { products })
+ })
 
 router.get('/delete/:id', async (req, res) => {
     await ProductModel.findByIdAndDelete(req.params.id);
