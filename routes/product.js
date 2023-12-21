@@ -20,7 +20,7 @@ router.post('/add', async (req, res) => {
 router.get('/detail/:id',async (req, res) => {
     var id = req.params.id;
     //SQL: SELECT * FROM mobiles WHERE brand = "id"
-    var products = await ProductModel.find({ product : id }).populate('type');
+    var products = await ProductModel.findById(id);
     res.render('product/detail', { products })
  
 })
@@ -49,11 +49,11 @@ router.post('/edit/:id', async(req, res) =>{
     res.redirect('/product');
 })
 
-router.post('/search', async (req, res) => {
-    var keyword = req.body.keyword;
+router.post('/search/', async (req, res) => {
+    var keyword = req.body.name;
     //SQL: SELECT * FROM mobiles WHERE model LIKE '%keyword%'
-    var products = await ProductModel.find({ model: new RegExp(keyword, "i") }).populate('type');
-    res.render('product/index', { products })
+    var products = await ProductModel.find({ name: new RegExp(keyword, "i") }).populate('type');
+    res.render('product/index', { products: products })
  })
 
 router.get('/customer', async (req, res) =>{

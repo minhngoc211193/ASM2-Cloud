@@ -16,12 +16,7 @@ router.post('/add', async(req,res) =>{
     await TypeModel.create(type);
     res.redirect('/type');
 })
-router.get('/detail/:id', async (req, res) => {
-    var id = req.params.id;
-    //SQL: SELECT * FROM mobiles WHERE brand = "id"
-    var products = await ProductModel.find({ type : id }).populate('type');
-    res.render('type/detail', { products })
- })
+
 router.get('/delete/:id', async(req, res) =>{
     var id = req.params.id;
     try{
@@ -55,6 +50,13 @@ router.post('/edit/:id', async(req,res)=>{
         console.log('Update faile. Error: ' + error);
     }
     res.redirect('/type');
+})
+router.get('/detail/:id',async (req, res) => {
+    var id = req.params.id;
+    //SQL: SELECT * FROM mobiles WHERE brand = "id"
+    var types = await TypeModel.findById(id);
+    res.render('type/detail', { types })
+ 
 })
 
 module.exports = router;

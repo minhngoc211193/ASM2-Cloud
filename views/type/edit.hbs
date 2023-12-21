@@ -7,11 +7,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     </head>
 <body>
-<form action="/type/edit/{{ type._id }}" method="post">
-   <h1>Edit brand</h1>
-   Brand name: <input type="text" name="name" id="" value="{{ type.name }}" required>
-   <br><br>
-   <input type="submit" value="Edit">
+<form ction="/type/edit/{{ type._id }}" method="post">
+<section class="vh-100 bg-image"
+  style="background-image: url(../images/background2.jpg);object-fit: cover">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Edit type of product</h2>
+                <div class="form-outline mb-4">
+                  <input type="text" id="" name="name" value="{{ type.name }}" placeholder="Name of type" class="form-control form-control-lg" required />
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="" name="image" value="{{ type.image }}" placeholder="Image" class="form-control form-control-lg" required />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" value="Edit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Upload</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </form>
 </body>
 </html>

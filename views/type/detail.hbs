@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ToyStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+<body>
+
+<div action="/type/detail/{{types._id}}" method="get" class="container mt-3" style="text-align:center">
+ <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <img class="img-fluid animated pulse infinite" src="{{types.image}}">
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="text-primary mb-4" >{{types.name}} <br><span class="fw-light text-dark"></span></h1>
+                    <p class="mb-4"></p>
+                    <p class="mb-4"></p>
+                    <a class="btn btn-primary py-2 px-4" href="/product">Shop Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- About End -->
+
+
+</div>
+</body>
+</html>

@@ -12,6 +12,7 @@ var ProductSchema = mongoose.Schema(
         required: true,
       },
       image:String,
+      description: String,
       type: {
          type: mongoose.Schema.Types.ObjectId,
          ref: 'types'  // 'brands': collection
