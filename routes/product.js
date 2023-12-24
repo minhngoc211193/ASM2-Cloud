@@ -69,6 +69,6 @@ router.post('/search/', async (req, res) => {
 
 router.get('/customer', async (req, res) =>{
     var products = await ProductModel.find({}).populate('type');
-    res.render('product/customer', {layout: 'layout', products});
+    res.render('product/customer', { products});
 })
 module.exports = router;
